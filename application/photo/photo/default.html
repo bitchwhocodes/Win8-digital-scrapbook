@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>photo</title>
+
+    <!-- WinJS references -->
+    <script type="text/template" id="slide-template">
+      <li class="item" style="height:730px;">
+       
+         
+           <img src="<%=images.src%>" width="<%=images.width%>" height="<%=images.height%>"/>
+         <div class="title"><p><%=title%></p></div>
+ 
+     
+       </li>
+    </script>
+    
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic' rel='stylesheet' type='text/css'>
+    <!-- photo references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script data-main="/js/main" src="/js/libs/require/require.js"></script>
+</head>
+
+<body>
+    <div id="main" role="main">
+      <section class="slider">
+        <div id="slides">
+            <div id="intro">
+                <!-- REPLACE HERE-->
+                <div class="box">
+                <h2>Images<span class="itl">of</span>New York</h2>
+                <h3><span>Stacey Mulcahy</span></h3>
+                <div class="status">Loading</div>
+                </div>
+            </div>
+            <ul id="slidelist" class="slides-container"></ul>
+        </div>
+    </section>    
+    </div>
+    
+</body>
+</html>
