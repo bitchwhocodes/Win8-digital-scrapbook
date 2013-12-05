@@ -2,13 +2,17 @@
 define([
   'mainview',
   'slidermodel',
+  'winapp'
 ], 
-  function (MainView, SliderModel) {
-  	var initialize = function() {
+  function (MainView, SliderModel,WinApp) {
+      var initialize = function () {
+         
+        WinApp.initialize();
   	    var slideModel = new SliderModel();
-        var mainView = new MainView({model: slideModel});
+  	    var mainView = new MainView({ model: slideModel });
   	};
-    return { 
+
+      return { 
       initialize: initialize
     };
 });

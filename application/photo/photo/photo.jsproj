@@ -53,17 +53,18 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="data\data.json" />
     <Content Include="default.html" />
-    <Content Include="images\affinity.jpeg" />
-    <Content Include="images\cinelli-front.jpeg" />
-    <Content Include="images\cinelli.jpeg" />
-    <Content Include="images\home-banner-01.jpg" />
     <Content Include="images\logo.png" />
-    <Content Include="images\people.jpeg" />
+    <Content Include="images\photos\affinity.jpeg" />
+    <Content Include="images\photos\cinelli-front.jpeg" />
+    <Content Include="images\photos\cinelli.jpeg" />
+    <Content Include="images\photos\home-banner-01.jpg" />
+    <Content Include="images\photos\people.jpeg" />
+    <Content Include="images\photos\surly.jpeg" />
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />
     <Content Include="images\storelogo.png" />
-    <Content Include="images\surly.jpeg" />
     <Content Include="js\app.js" />
     <Content Include="js\config\config.js" />
     <Content Include="js\default.js" />
@@ -75,10 +76,12 @@
     <Content Include="js\libs\superslides\hammer.min.js" />
     <Content Include="js\libs\underscore\underscore-min.js" />
     <Content Include="js\main.js" />
+    <Content Include="js\models\Instagram.js" />
     <Content Include="js\models\SlideCollection.js" />
     <Content Include="js\models\SlideModel.js" />
     <Content Include="js\models\SliderModel.js" />
     <Content Include="js\views\MainView.js" />
+    <Content Include="js\winapp.js" />
     <None Include="photo_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

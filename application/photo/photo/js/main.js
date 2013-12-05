@@ -7,9 +7,13 @@ require.config({
         'slidermodel': '/js/models/SliderModel',
         'mainview': '/js/views/MainView',
         'hammer':'/js/libs/superslides/hammer.min',
-        'slidecollection':'/js/models/SlideCollection',
+        'slidecollection': '/js/models/SlideCollection',
+        'filecollection': '/js/models/directory/FileCollection',
+        'filemodel': '/js/models/directory/FileModel',
         'config': '/js/config/config',
         'jqueryeasing': '/js/libs/jquery/jquery.easing',
+        'winapp': 'winapp',
+        'instagram':'/js/models/Instagram'
     }
 });
 
@@ -18,5 +22,6 @@ require([
  'app',
 
 ], function (App) {
-  App.initialize();
+   App.initialize();
+
 });

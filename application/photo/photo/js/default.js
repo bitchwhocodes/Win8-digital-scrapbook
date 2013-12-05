@@ -9,6 +9,7 @@
     var activation = Windows.ApplicationModel.Activation;
 
     app.onactivated = function (args) {
+        initializePages();
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
                 // TODO: This application has been newly launched. Initialize
@@ -20,7 +21,18 @@
             args.setPromise(WinJS.UI.processAll());
         }
     };
-
+    function initializePages() {
+        
+        console.log("stacey");
+        //About and Privacy Policy Settings Charm
+        WinJS.Application.onsettings = function (e) {
+            e.detail.applicationcommands = {
+                "aboutSettings": { title: "About", href: Config.about },
+                "privacySettings": { title: "Privacy Policy", href: Config.privacy }
+            };
+            WinJS.UI.SettingsFlyout.populateSettings(e);
+        };
+    }
     app.oncheckpoint = function (args) {
         // TODO: This application is about to be suspended. Save any state
         // that needs to persist across suspensions here. You might use the
@@ -32,3 +44,7 @@
 
     app.start();
 })();
+
+
+
+

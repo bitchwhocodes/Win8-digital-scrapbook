@@ -4,11 +4,9 @@ define([
 	'backbone',
 	'slidecollection',
     'jqueryeasing',
-
     'config',
     'slidermodel',
     'hammer'
- 
 
 ],
 	function ($, _, Backbone, SlideCollection, Jeasing,config,slidermodel,hammer) {
@@ -28,23 +26,22 @@ define([
 	            this.model = options.model;
 	            this.model.on('change:selectedIndex', $.proxy(this.handleIndexChange, this));
 	            this.model.initialize();
-	            this.model.collection.fetch({ success: $.proxy(that.render, that),error:$.proxy(that.handleError,that) });
-
-	         
-	     
+	            console.log(this.model.get('useWordPress'));
+	          
+	            this.model.collection.fetch().done($.proxy(that.render, that), $.proxy(that.handleError, that));
 	            var element = document.getElementById('slidelist');
 	            var hammertime = Hammer(element, { swipe: true }).on("swipeleft", function (event) {
 	                that.model.set({ 'slideDirection': 'left' });
 	                that.goNext();
-
 	            });
 
 	            var hammertime = Hammer(element, { swipe: true }).on("swiperight", function (event) {
 	                that.model.set({ 'slideDirection': 'right' });
 	                that.goPrevious();
 	            });
-
-        
+                // Populate the text in the intro screen. Could comment out and do your own intro screen.
+	            $('#intro h2').html(this.model.get('mainTitle'));
+	            $('#intro h3 span').text(this.model.get('subTitle'));
                 
 	        },
 
@@ -82,7 +79,6 @@ define([
 	                $(this.prevElement).animate({ 'left': (multiplier*-1) * ($(this.prevElement).width()) }, this.model.animationTime);
 
 	            }
-	            
 	        },
 
 	      
@@ -161,21 +157,21 @@ define([
 
 	        render: function () {
 	            
+	            console.log("render");
+	            
 	            var height = $(document).height();
 	          
 	            var that = this;
 	            var len = this.model.collection.length;
+	            console.log("len" + len);
 	            var items = 0;
 	            var html = '';
 	            for (var i = 0; i < len; i++)
 	            {
 	                var m = this.model.collection.at(i);
-	               
+	                console.log(JSON.stringify(m.toJSON()));
 	                html += (this.template(m.toJSON()));
-	                if (m.get('type') == 'post') {
-	                    
-	                    items++;
-	                } 
+	                items++;
 	            }
 	            var count = 0;
 
